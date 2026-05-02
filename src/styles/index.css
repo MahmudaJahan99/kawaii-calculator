@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import './theme.css';
+
+/* ============================================
+   Global Styles & Reset
+============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--kc-bg);
+  font-family: var(--kc-font-buttons);
+  color: var(--kc-text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}

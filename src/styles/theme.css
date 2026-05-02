@@ -1,0 +1,45 @@
+/* ============================================
+   Global Styles & Reset
+============================================ */
+
+:root {
+    /* --- Colors --- */
+    --kc-bg: #FFF8F0;
+    --kc-surface: #FFF0F5;
+    --kc-surface-alt: #F5F0FF;
+
+    --kc-pink: #FFB7C5;
+    --kc-pink-dark: #FF85A1;
+    --kc-pink-shadow: #FF99AF;
+    --kc-pink-press: #FF7A9A;
+
+    --kc-lavender: #C8B6E2;
+    --kc-lav-dark: #B9A4D8;
+    --kc-lav-press: #A08CC8;
+
+    --kc-mint: #B5EAD7;
+    --kc-mint-text: #2d7a58;
+    --kc-mint-dark: #9DDFC6;
+    --kc-mint-press: #7DCFAA;
+
+    --kc-peach: #FFDAB9;
+    --kc-text: #4A3F3F;
+    --kc-text-muted: #C8B6E2;
+    --kc-border: #FFD6E0;
+    --kc-shadow: #E8C4C4;
+
+    --kc-num-border: #FFD6E0;
+    --kc-num-press: #F5C2CC;
+
+    /* --- Typography --- */
+    --kc-font-logo: 'Baloo 2', cursive;
+    --kc-font-buttons: 'Nunito', sans-serif;
+    --kc-font-display: 'DM Mono', monospace;
+
+    /* --- Spacing & Shape --- */
+    --kc-radius-card: 32px;
+    --kc-radius-btn: 14px;
+    --kc-radius-display: 18px;
+    --kc-btn-height: 52px;
+    --kc-btn-gap: 8px;
+}
