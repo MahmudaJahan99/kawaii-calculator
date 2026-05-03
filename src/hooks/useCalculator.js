@@ -1,7 +1,7 @@
 // ============================================
 //  States and Event handling
 // ============================================
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import {
   applyOperator,
   applyPercent,
@@ -142,28 +142,37 @@ export function useCalculator() {
   // ================================================
   //  MAIN DISPATCHER
   // ================================================
-  const handleButtonPress = (value) => {
-    // Numbers and decimal point
-    if (!isNaN(value) || value === ".") {
-      handleNumber(value);
-      return;
-    }
+  const handleButtonPress = useCallback(
+    (value) => {
+      // Numbers and decimal point
+      if (!isNaN(value) || value === ".") {
+        handleNumber(value);
+        return;
+      }
 
-    // Operators
-    if (["+", "-", "*", "/"].includes(value)) {
-      handleOperator(value);
-      return;
-    }
+      // Operators
+      if (["+", "-", "*", "/"].includes(value)) {
+        handleOperator(value);
+        return;
+      }
 
-    // Equals
-    if (value === "=") {
-      handleEquals();
-      return;
-    }
+      // Equals
+      if (value === "=") {
+        handleEquals();
+        return;
+      }
 
-    // Actions (AC, +/-, %)
-    handleAction(value);
-  };
+      // Actions (AC, +/-, %)
+      handleAction(value);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [calcState],
+  );
+
+  const handleButtonPressRef = useRef(handleButtonPress);
+  useEffect(() => {
+    handleButtonPressRef.current = handleButtonPress;
+  }, [handleButtonPress]);
 
   // ================================================
   //  RETURN — the public API of this hook
@@ -208,12 +217,10 @@ export function useCalculator() {
       e.preventDefault();
 
       setActiveKey(mapped);
-      handleButtonPress(mapped);
+      handleButtonPressRef.current(mapped);
     };
 
-    const handleKeyUp = (e) => {
-      setActiveKey(null);
-    };
+    const handleKeyUp = () => setActiveKey(null)
 
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
