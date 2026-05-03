@@ -4,6 +4,14 @@
 
 A cutesy-themed calculator app built with **React 19** as part of a hands-on learning journey. This project focuses on real-world React patterns, clean file structure, and professional habits — wrapped in a pastel candy aesthetic.
 
+![Taskly Preview](./src/assets/kawaii-math-calculator.netlify.app_.png)
+
+# 🔗 Links
+
+- **Live Demo:** [https://kawaii-math-calculator.netlify.app/](https://kawaii-math-calculator.netlify.app/)
+- **Repository:** [https://github.com/MahmudaJahan99/kawaii-calculator](https://github.com/MahmudaJahan99/kawaii-calculator)
+
+
 ---
 
 ## ✨ Features
@@ -30,43 +38,6 @@ A cutesy-themed calculator app built with **React 19** as part of a hands-on lea
 | CSS Modules | Scoped styles per component |
 | `StrictMode` | `main.jsx` — catches impure renders in dev |
 | Controlled state | Display is 100% driven by hook state |
-
----
-
-## 🗂️ Project Structure
-
-```
-kawaii-calc/
-├── public/
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   ├── Calculator/
-│   │   │   ├── Calculator.jsx
-│   │   │   ├── Calculator.module.css
-│   │   │   ├── Display.jsx
-│   │   │   ├── Display.module.css
-│   │   │   ├── ButtonGrid.jsx
-│   │   │   ├── ButtonGrid.module.css
-│   │   │   ├── CalcButton.jsx
-│   │   │   └── CalcButton.module.css
-│   │   └── ui/
-│   │       └── Logo.jsx
-│   ├── hooks/
-│   │   └── useCalculator.js
-│   ├── utils/
-│   │   └── calculate.js
-│   ├── constants/
-│   │   └── buttons.js
-│   ├── styles/
-│   │   ├── globals.css
-│   │   └── theme.css
-│   ├── App.jsx
-│   └── main.jsx
-├── .eslintrc.cjs
-├── vite.config.js
-└── package.json
-```
 
 ---
 
@@ -106,64 +77,10 @@ kawaii-calc/
 
 ---
 
-## 🚀 Getting Started
-
-```bash
-# Clone the repo
-git clone https://github.com/your-username/kawaii-calc.git
-cd kawaii-calc
-
-# Install dependencies
-npm install
-
-# Start the dev server
-npm run dev
-
-# Build for production
-npm run build
-```
-
----
-
-## 📐 Naming Conventions
-
-- **Components** — PascalCase: `CalcButton.jsx`
-- **Hooks** — camelCase + `use` prefix: `useCalculator.js`
-- **CSS Modules** — same name as component: `CalcButton.module.css`
-- **Constants** — camelCase file, SCREAMING_SNAKE exports: `BUTTON_CONFIG`
-- **Utilities** — camelCase, pure functions: `calculate.js`
-- **Event handlers** — `handle` prefix: `handleButtonPress`
-
----
-
-## 🗺️ Build Roadmap
-
-- [x] Step 1 — Theme & global styles
-- [x] Step 2 — Constants & pure logic utilities
-- [x] Step 3 — `useCalculator` custom hook
-- [x] Step 4 — UI components + CSS Modules
-- [ ] Step 5 — Wire hook into components (`App.jsx`)
-- [ ] Step 6 — Framer Motion animations
-- [ ] Step 7 — Polish (keyboard support, favicon, responsive)
-
----
-
-## 🧠 Key Architecture Decisions
-
-**Why one `useState` instead of four?**
-All four state values change together on every button press. A single `setCalcState` call produces a single render, preventing momentary inconsistent states.
-
-**Why separate `calculate.js` from the hook?**
-Pure functions with no React dependencies are trivially testable and reusable. If the logic is ever wrong, you know exactly where to look.
-
-**Why `BUTTON_CONFIG` as a data array?**
-Adding or rearranging buttons requires changing one config object — zero component changes. This is the data-driven UI pattern used in production React apps.
-
----
 
 ## 👩‍💻 Author
 
-Built as Project #2 of a React 19 learning journey.
+Built as Project of a React 19 learning journey.
 
 ---
 
