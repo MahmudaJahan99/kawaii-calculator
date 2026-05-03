@@ -1,9 +1,11 @@
+import styles from './Logo.module.css'
+
 const Logo = () => {
     return (
-        <div>
-            
-        </div>
-    );
+        <h1 className={styles.logo}>
+            Kawaii <span>Calc</span> ✦
+        </h1>
+    )
 };
 
 export default Logo;

@@ -1,9 +1,18 @@
-import './styles/index.css'
+import { useCalculator } from './hooks/useCalculator'
+import Calculator from './components/Calculator/Calculator'
+import styles from './App.module.css'
 
 function App() {
+const { displayValue, expression, handleButtonPress } = useCalculator()
 
   return (
-    <h1>Hello World</h1>
+    <main className={styles.main}>
+      <Calculator
+        displayValue={displayValue}
+        expression={expression}
+        onButtonPress={handleButtonPress}
+      />
+    </main>
   )
 }
 

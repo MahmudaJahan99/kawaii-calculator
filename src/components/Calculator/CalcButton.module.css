@@ -1,0 +1,61 @@
+/* Base button — shared by all types */
+.btn {
+    font-family: var(--kc-font-buttons);
+    font-weight: 700;
+    font-size: 1rem;
+    height: var(--kc-btn-height);
+    border-radius: var(--kc-radius-btn);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.btn:hover {
+    filter: brightness(1.06);
+}
+
+/* Wide button — spans 2 grid columns (the "0") */
+.wide {
+    grid-column: span 2;
+    justify-content: flex-start;
+    padding-left: 22px;
+}
+
+/* Number buttons */
+.number {
+    background: var(--kc-surface);
+    color: var(--kc-text);
+    border: 1.5px solid var(--kc-num-border);
+    box-shadow: 0 3px 0 var(--kc-num-press);
+}
+
+/* Operator buttons (÷ × − +) */
+.operator {
+    background: var(--kc-lavender);
+    color: #fff;
+    border: 1.5px solid var(--kc-lav-dark);
+    box-shadow: 0 3px 0 var(--kc-lav-press);
+}
+
+/* Action buttons (AC, +/-, %) */
+.action {
+    background: var(--kc-mint);
+    color: var(--kc-mint-text);
+    font-size: 0.88rem;
+    border: 1.5px solid var(--kc-mint-dark);
+    box-shadow: 0 3px 0 var(--kc-mint-press);
+}
+
+/* Equals button (♡) */
+.equals {
+    background: var(--kc-pink);
+    color: #fff;
+    font-size: 1.25rem;
+    border: 1.5px solid var(--kc-pink-shadow);
+    box-shadow: 0 3px 0 var(--kc-pink-press);
+}

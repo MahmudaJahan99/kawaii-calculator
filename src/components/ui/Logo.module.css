@@ -1,0 +1,13 @@
+.logo {
+  font-family: var(--kc-font-logo);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--kc-pink-dark);
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.logo span {
+  color: var(--kc-lavender);
+}
