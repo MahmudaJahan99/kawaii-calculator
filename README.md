@@ -80,8 +80,10 @@ A cutesy-themed calculator app built with **React 19** as part of a hands-on lea
 
 ## 👩‍💻 Author
 
-Built as Project of a React 19 learning journey.
+Mahmuda Jahan. Built as Project of a React 19 learning journey.
 
 ---
 
-*Made with 🍓 and a lot of `parseFloat`*
+## License
+
+MIT
