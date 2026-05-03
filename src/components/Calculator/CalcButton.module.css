@@ -59,3 +59,9 @@
     border: 1.5px solid var(--kc-pink-shadow);
     box-shadow: 0 3px 0 var(--kc-pink-press);
 }
+
+/* Keyboard active highlight */
+.active {
+  filter: brightness(0.92);
+  box-shadow: none !important;
+}

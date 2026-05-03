@@ -3,7 +3,7 @@ import Calculator from './components/Calculator/Calculator'
 import styles from './App.module.css'
 
 function App() {
-const { displayValue, expression, handleButtonPress } = useCalculator()
+  const { displayValue, expression, handleButtonPress, activeKey } = useCalculator()
 
   return (
     <main className={styles.main}>
@@ -11,6 +11,7 @@ const { displayValue, expression, handleButtonPress } = useCalculator()
         displayValue={displayValue}
         expression={expression}
         onButtonPress={handleButtonPress}
+        activeKey={activeKey}
       />
     </main>
   )

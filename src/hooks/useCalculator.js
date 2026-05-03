@@ -1,8 +1,7 @@
 // ============================================
 //  States and Event handling
 // ============================================
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   applyOperator,
   applyPercent,
@@ -21,6 +20,9 @@ const INITIAL_STATE = {
 export function useCalculator() {
   // The main state object for the calculator
   const [calcState, setCalcState] = useState(INITIAL_STATE);
+
+  // Active key for visual feedback on keyboard input
+  const [activeKey, setActiveKey] = useState(null);
 
   // Destructure for cleaner reading below
   const { currentInput, previousInput, operator, waitingForNext } = calcState;
@@ -171,9 +173,62 @@ export function useCalculator() {
   const expression =
     previousInput && operator ? `${previousInput} ${operator}` : "";
 
+  // ================================================
+  //  KEYBOARD SUPPORT
+  // ================================================
+  useEffect(() => {
+    const KEY_MAP = {
+      0: "0",
+      1: "1",
+      2: "2",
+      3: "3",
+      4: "4",
+      5: "5",
+      6: "6",
+      7: "7",
+      8: "8",
+      9: "9",
+      ".": ".",
+      "+": "+",
+      "-": "-",
+      "*": "*",
+      "/": "/",
+      Enter: "=",
+      "=": "=",
+      Escape: "AC",
+      Backspace: "AC",
+      "%": "%",
+    };
+
+    const handleKeyDown = (e) => {
+      const mapped = KEY_MAP[e.key];
+
+      if (mapped === undefined) return;
+
+      e.preventDefault();
+
+      setActiveKey(mapped);
+      handleButtonPress(mapped);
+    };
+
+    const handleKeyUp = (e) => {
+      setActiveKey(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+
+    // Cleanup — removes the listener if the component ever unmounts
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
+  }, []);
+
   return {
     displayValue: currentInput,
     expression,
     handleButtonPress,
+    activeKey,
   };
 }
