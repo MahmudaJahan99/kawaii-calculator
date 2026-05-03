@@ -1,3 +1,16 @@
+/* Calculator card */
+.card {
+    background: var(--kc-bg);
+    border-radius: var(--kc-radius-card);
+    padding: 20px;
+    width: min(300px, calc(100vw - 2rem));
+    /* ← fluid but capped */
+    border: 2px solid var(--kc-border);
+    box-shadow: 0 8px 0 var(--kc-shadow), 0 12px 32px rgba(200, 100, 120, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
 /* Base button — shared by all types */
 .btn {
     font-family: var(--kc-font-buttons);
@@ -62,6 +75,6 @@
 
 /* Keyboard active highlight */
 .active {
-  filter: brightness(0.92);
-  box-shadow: none !important;
+    filter: brightness(0.92);
+    box-shadow: none !important;
 }

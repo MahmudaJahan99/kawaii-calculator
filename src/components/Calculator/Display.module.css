@@ -34,7 +34,7 @@
 
 .value {
     font-family: var(--kc-font-display);
-    font-size: 2.2rem;
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
     font-weight: 500;
     color: var(--kc-text);
     text-align: right;

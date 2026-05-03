@@ -43,3 +43,11 @@
     --kc-btn-height: 52px;
     --kc-btn-gap: 8px;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 340px) {
+  :root {
+    --kc-btn-height: 46px;
+    --kc-btn-gap:    6px;
+  }
+}
