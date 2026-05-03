@@ -16,7 +16,7 @@ const Calculator = ({ displayValue, expression, onButtonPress, activeKey }) => {
                 <span className={styles.ear} />
                 <span className={styles.ear} />
             </div>
-            <div className={styles.card}>
+            <div className={styles.card} role="application" aria-label="Kawaii Calc calculator">
                 <div className={styles.face} aria-hidden="true">
                     <span className={styles.eye}>
                         <span className={styles.cheek} />

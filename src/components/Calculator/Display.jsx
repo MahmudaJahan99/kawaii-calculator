@@ -3,7 +3,7 @@ import styles from './Display.module.css'
 
 const Display = ({ value, expression }) => {
     return (
-        <div className={styles.display}>
+        <div className={styles.display} role="region" aria-label="Calculator display">
             {/* Decorative stars */}
             <span className={styles.stars} aria-hidden="true">✦ ✦</span>
 
@@ -26,6 +26,8 @@ const Display = ({ value, expression }) => {
                 <motion.p
                     key={value}
                     className={styles.value}
+                    aria-live="polite"
+                    aria-atomic="true"
                     initial={{ opacity: 0, y: 8, scale: 0.97 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -8, scale: 0.97 }}

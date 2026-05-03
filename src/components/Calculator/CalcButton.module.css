@@ -32,6 +32,15 @@
     filter: brightness(1.06);
 }
 
+.btn:focus-visible {
+  outline: 2.5px solid var(--kc-pink-dark);
+  outline-offset: 3px;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* Wide button — spans 2 grid columns (the "0") */
 .wide {
     grid-column: span 2;

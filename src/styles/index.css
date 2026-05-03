@@ -14,14 +14,25 @@
   padding: 0;
 }
 
+/* Smooth scrolling and text rendering */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
 body {
   background-color: var(--kc-bg);
   font-family: var(--kc-font-buttons);
+  font-display: swap;
   color: var(--kc-text);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overscroll-behavior: none;
 }
 
 button {
@@ -29,4 +40,10 @@ button {
   border: none;
   background: none;
   font-family: inherit;
+}
+
+/* Selection color matches the theme */
+::selection {
+  background: var(--kc-pink);
+  color: #fff;
 }
